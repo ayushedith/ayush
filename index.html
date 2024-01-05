@@ -1,395 +1,722 @@
-<!DOCTYPE html><html><head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <title>Ayush</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta name="generator" content="Hugo 0.96.0" />
     <link rel="icon" href="https://cdn.discordapp.com/attachments/1015703654956810270/1015703787052212305/Intersect.png?ex=65906e5d&is=657df95d&hm=eb4e01ca57da3f543f4814397b472eacd28af9d78727c6b866c54b7f69960aa2&" type="image/x-icon">
-
-    <meta name="theme-color" content="#101126">
-    <meta name="description" content="I mostly breathe and also do some other stuff.">
-    <meta property="og:title" content="Ayush">
-    <meta property="og:description" content="I mostly breathe and also do some other stuff.">
-    <meta property="og:site_name" content="Ayush">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://">
-    <meta name="twitter:title" content="ayushedith">
-    <meta name="twitter:description" content="I mostly breathe and also do some other stuff.">
-    <meta name="twitter:card" content="summary">
-
+    <title>Ayush</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="" />
     <style>
-        @font-face {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: url(fonts/roboto.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+:root {
+  --cursor-visibility: hidden; }
 
-        @font-face {
-            font-family: 'Ubuntu';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: url(fonts/ubuntu.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  font-family: "Inconsolata", monospace;
+  font-size: 4vmin;
+  line-height: 4.1vmin;
+  font-weight: normal; }
 
-        html,
-        body {
-            margin: 0;
-            min-height: 100vh;
-        }
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
 
-        body {
-            background: linear-gradient(40deg, #191a34, #101126);
-            color: #D0D0D0;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 400;
-            line-height: 1.5;
-        }
+#content {
+  min-width: 82vmin;
+  min-height: 82vmin; }
 
-        .container {
-            display: flex;
-            align-items: center;
-            min-height: 100vh;
-        }
+::-webkit-scrollbar {
+  width: 10px; }
 
-        .box {
-            max-width: 750px;
-            margin: auto;
-            padding: 32px;
-            text-align: center;
-            flex-grow: 1;
-        }
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 1px white; }
 
-        hr {
-            display: block;
-            height: 1px;
-            border: 0 none;
-            border-top: 1px solid rgba(220, 220, 255, 0.175)
-        }
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px white; }
 
-        svg {
-            fill: #D0D0D0;
-            width: 2rem;
-            height: 2rem;
-        }
+.cursor, #ps1_01:after, #cd:after, #ps1_02:after, #cat:after, #std_out_01:after, #ps1_03:after, #std_out_02:after, #ps1_04:after {
+  visibility: var(--cursor-visibility);
+  content: "▌";
+  overflow: hidden;
+  color: white;
+  animation: blink 500ms linear infinite alternate; }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+@keyframes blink {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 0.9; } }
 
-        a:hover,
-        a:hover svg {
-            color: #fff;
-            fill: #fff;
-        }
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 2.5vmin;
+    line-height: 2.6vmin; }
+  #content {
+    min-width: 60vmin; } }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 400;
-            font-family: 'Ubuntu', sans-serif;
-            line-height: 1;
-            margin: 0 0 2.5rem;
-        }
 
-        p {
-            margin: 2rem 0;
-        }
 
-        .social-buttons {
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-        }
 
-        .social-buttons a {
-            display: flex;
-            align-items: center;
-        }
 
-        .highlight-buttons {
-            margin-top: 4rem;
-            flex-direction: column;
-            gap: 1rem;
-        }
 
-        .highlight-buttons svg {
-            margin-right: 1rem;
-        }
 
-        #bg-canvas {
-            position: fixed;
-            z-index: -1;
-        }
 
-        @media (max-width: 500px) {
-            body {
-                font-size: 0.9rem;
-            }
 
-            h1 {
-                font-size: 1.8rem;
-            }
 
-            svg {
-                width: 1.75rem;
-                height: 1.75rem;
-            }
-        }
-    </style>
-</head>
 
-<body>
 
-    <canvas id="bg-canvas"></canvas>
-    <div class="container">
-        <div class="box">
-            <h1>Ayush</h1>
-            <hr>
-            <p class="tagline">
-               Hey 👋, i'm Ayush. I mostly breathe and a full-stack developer with MERN stack. I'm a student and I love to </CODE>
-            </p>
-            <hr>
-            <p class="social-buttons">
-                <a href="https://github.com/ayushedith" aria-label="GitHub">
-                    <svg viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
-                        </path>
-                    </svg>
-                </a>
-                <a href="discord:///users/581525444424368131" aria-label="Discord">
-                    <svg viewBox="0 0 7.56 8.639">
-                        <path d="M2.998 3.624c-.246 0-.44.216-.44.48 0 .263.198.48.44.48.246 0 .44-.217.44-.48.005-.264-.194-.48-.44-.48zm1.577 0c-.247 0-.441.216-.441.48 0 .263.199.48.44.48.247 0 .441-.217.441-.48 0-.264-.194-.48-.44-.48z">
-                        </path>
-                        <path d="M6.674 0H.886A.888.888 0 000 .89v5.84c0 .493.397.89.886.89h4.898l-.229-.8.553.515.523.484.929.82V.89A.888.888 0 006.674 0zM5.007 5.642s-.156-.186-.286-.35c.566-.16.782-.514.782-.514a2.472 2.472 0 01-.496.254 3.026 3.026 0 01-1.745.181 3.626 3.626 0 01-.636-.185 2.531 2.531 0 01-.315-.147l-.039-.021-.017-.013c-.078-.043-.121-.074-.121-.074s.207.346.756.51c-.13.164-.29.359-.29.359-.954-.03-1.317-.657-1.317-.657 0-1.391.622-2.518.622-2.518.622-.467 1.214-.454 1.214-.454l.043.052c-.778.224-1.136.566-1.136.566s.095-.052.255-.126c.462-.203.83-.259.98-.272.026-.004.048-.008.074-.008a3.521 3.521 0 012.173.406s-.342-.324-1.076-.549l.06-.069s.592-.013 1.214.454c0 0 .622 1.127.622 2.518 0 0-.367.626-1.321.657z">
-                        </path>
-                    </svg>
-                </a>
-                <a href="https://www.youtube.com/@ayushedith" aria-label="YouTube">
-                    <svg viewBox="0 0 128 128">
-                        <path d="M126.72 38.224s-1.252-8.883-5.088-12.794c-4.868-5.136-10.324-5.16-12.824-5.458-17.912-1.305-44.78-1.305-44.78-1.305h-.056s-26.868 0-44.78 1.305c-2.504.298-7.956.322-12.828 5.458C2.528 29.342 1.28 38.224 1.28 38.224S0 48.658 0 59.087v9.781c0 10.433 1.28 20.863 1.28 20.863s1.248 8.883 5.084 12.794c4.872 5.136 11.268 4.975 14.116 5.511 10.24.991 43.52 1.297 43.52 1.297s26.896-.04 44.808-1.345c2.5-.302 7.956-.326 12.824-5.462 3.836-3.912 5.088-12.794 5.088-12.794S128 79.302 128 68.868v-9.781c0-10.429-1.28-20.863-1.28-20.863zM50.784 80.72l-.004-36.219 34.584 18.172-34.58 18.047z">
-                        </path>
-                    </svg>
-                </a>
-                <a href="https://ko-fi.com/ayushedith" aria-label="Reddit">
-                    <svg viewBox="0 0 512 512">
-                        <path d="M309.605 343.348c-11.468 11.468-36.042 15.562-53.554 15.562-17.563 0-42.086-4.094-53.555-15.562a6.887 6.887 0 00-9.777 0 6.887 6.887 0 000 9.777c18.176 18.176 53.094 19.61 63.332 19.61s45.105-1.434 63.336-19.61a6.987 6.987 0 000-9.777 6.892 6.892 0 00-9.782 0zm0 0M224 282.676C224 267.98 212.02 256 197.324 256c-14.691 0-26.676 11.98-26.676 26.676 0 14.691 11.985 26.676 26.676 26.676 14.696 0 26.676-11.98 26.676-26.676zm0 0">
-                        </path>
-                        <path d="M256 0C114.637 0 0 114.637 0 256s114.637 256 256 256 256-114.637 256-256S397.363 0 256 0zm148.531 290.148c.563 3.688.871 7.426.871 11.215 0 57.446-66.867 103.989-149.351 103.989s-149.352-46.543-149.352-103.989c0-3.84.309-7.629.871-11.316-13.004-5.836-22.066-18.89-22.066-34.047 0-20.582 16.691-37.324 37.324-37.324 10.035 0 19.098 3.941 25.805 10.394 25.906-18.687 61.75-30.62 101.633-31.644 0-.512 18.636-89.293 18.636-89.293a6.57 6.57 0 012.868-4.196c1.484-.972 3.277-1.28 5.02-.921l62.054 13.207c4.351-8.805 13.308-14.899 23.804-14.899 14.747 0 26.676 11.93 26.676 26.676s-11.93 26.676-26.676 26.676c-14.285 0-25.855-11.266-26.52-25.395l-55.554-11.828-16.996 80.027c39.168 1.38 74.344 13.258 99.84 31.692 6.707-6.5 15.82-10.496 25.906-10.496 20.637 0 37.324 16.691 37.324 37.324 0 15.258-9.164 28.312-22.117 34.148zm0 0">
-                        </path>
-                        <path d="M314.676 256C299.98 256 288 267.98 288 282.676c0 14.691 11.98 26.676 26.676 26.676 14.691 0 26.676-11.985 26.676-26.676 0-14.696-11.98-26.676-26.676-26.676zm0 0">
-                        </path>
-                    </svg>
-                </a>
-                <a href="https://twitter.com/ayushedith" aria-label="X aka twitter">
-                    <svg viewBox="0 0 66.146 53.747">
-                        <path d="M20.802 53.747c24.96 0 38.613-20.68 38.613-38.613 0-.588 0-1.172-.04-1.755a27.612 27.612 0 006.77-7.024 27.088 27.088 0 01-7.794 2.135A13.618 13.618 0 0064.318.984 27.197 27.197 0 0155.7 4.278a13.584 13.584 0 00-23.127 12.377A38.529 38.529 0 014.603 2.476a13.581 13.581 0 004.202 18.116 13.47 13.47 0 01-6.16-1.699v.172A13.576 13.576 0 0013.534 32.37a13.55 13.55 0 01-6.127.232 13.586 13.586 0 0012.679 9.425 27.23 27.23 0 01-16.854 5.82A27.625 27.625 0 010 47.652a38.42 38.42 0 0020.802 6.085">
-                        </path>
-                    </svg>
-                </a>
-                <a href="https://ko-fi.com/ayushedith" aria-label="Steam">
-                    <svg viewBox="0 0 256 259">
-                        <path d="M127.779 0C60.42 0 5.24 52.412 0 119.014l68.724 28.674a35.812 35.812 0 0120.426-6.366c.682 0 1.356.019 2.02.056l30.566-44.71v-.626c0-26.903 21.69-48.796 48.353-48.796 26.662 0 48.352 21.893 48.352 48.796 0 26.902-21.69 48.804-48.352 48.804-.37 0-.73-.009-1.098-.018l-43.593 31.377c.028.582.046 1.163.046 1.735 0 20.204-16.283 36.636-36.294 36.636-17.566 0-32.263-12.658-35.584-29.412L4.41 164.654c15.223 54.313 64.673 94.132 123.369 94.132 70.818 0 128.221-57.938 128.221-129.393C256 57.93 198.597 0 127.779 0zM80.352 196.332l-15.749-6.568c2.787 5.867 7.621 10.775 14.033 13.47 13.857 5.83 29.836-.803 35.612-14.799a27.555 27.555 0 00.046-21.035c-2.768-6.79-7.999-12.086-14.706-14.909-6.67-2.795-13.811-2.694-20.085-.304l16.275 6.79c10.222 4.3 15.056 16.145 10.794 26.46-4.253 10.314-15.998 15.195-26.22 10.895zm121.957-100.29c0-17.925-14.457-32.52-32.217-32.52-17.769 0-32.226 14.595-32.226 32.52 0 17.926 14.457 32.512 32.226 32.512 17.76 0 32.217-14.586 32.217-32.512zm-56.37-.055c0-13.488 10.84-24.42 24.2-24.42 13.368 0 24.208 10.932 24.208 24.42 0 13.488-10.84 24.421-24.209 24.421-13.359 0-24.2-10.933-24.2-24.42z">
-                        </path>
-                    </svg>
-                </a>
-                <a href="https://ko-fi.com/ayushedith" aria-label="Keybase">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M10.446 21.371a.953.953 0 11-.955-.954c.524 0 .951.431.951.955m5.922-.001a.953.953 0 11-.958-.954c.526 0 .954.431.954.955m4.544-9.159l-.156-.204c-.046-.06-.096-.116-.143-.175-.045-.061-.094-.113-.141-.169-.104-.12-.209-.239-.319-.359l-.076-.08-.091-.099-.135-.131c-.015-.018-.032-.034-.05-.053a10.87 10.87 0 00-3.955-2.504l-.23-.078.035-.083a4.108 4.108 0 00-.12-3.255 4.11 4.11 0 00-2.438-2.16c-.656-.216-1.23-.319-1.711-.305-.033-.105-.1-.577.496-1.848L10.663 0l-.287.399c-.33.455-.648.895-.945 1.328a1.857 1.857 0 00-1.245-.58L6.79 1.061h-.012c-.033-.003-.07-.003-.104-.003-.99 0-1.81.771-1.87 1.755l-.088 1.402v.003a1.876 1.876 0 001.755 1.979l1.002.061c-.065.84.073 1.62.405 2.306a11.279 11.279 0 00-3.66 2.484C.913 14.391.913 18.051.913 20.994v1.775l1.305-1.387c.266.93.652 1.807 1.145 2.615H5.06a9.197 9.197 0 01-1.68-3.848l1.913-2.03-.985 3.091 1.74-1.268c3.075-2.234 6.744-2.75 10.91-1.529 1.805.532 3.56.039 4.473-1.257l.104-.165c.091.498.141.998.141 1.496 0 1.563-.255 3.687-1.38 5.512h1.611c.776-1.563 1.181-3.432 1.181-5.512-.001-2.199-.786-4.421-2.184-6.274zM8.894 6.191c.123-1.002.578-1.949 1.23-2.97a1.36 1.36 0 001.283.749c.217-.008.605.025 1.233.232.714.236 1.286.744 1.608 1.425s.349 1.442.079 2.149c-.173.445-.454.82-.806 1.109l-.408-.502-.002-.003a1.468 1.468 0 00-2.059-.205c-.334.27-.514.66-.534 1.058-1.2-.541-1.8-1.643-1.628-3.041l.004-.001zm4.304 5.11l-.519.425a.228.228 0 01-.323-.032l-.111-.135a.238.238 0 01.034-.334l.51-.42-1.055-1.299a.307.307 0 01.044-.436.303.303 0 01.434.041l2.963 3.645a.309.309 0 01-.168.499.315.315 0 01-.31-.104l-.295-.365-1.045.854a.244.244 0 01-.154.055.237.237 0 01-.186-.09l-.477-.579a.24.24 0 01.035-.336l1.051-.857-.426-.533-.002.001zM7.753 4.866l-1.196-.075a.463.463 0 01-.435-.488l.09-1.401a.462.462 0 01.461-.436h.024l1.401.091a.459.459 0 01.433.488l-.007.101a9.269 9.269 0 00-.773 1.72h.002zm12.524 11.481c-.565.805-1.687 1.081-2.924.718-3.886-1.141-7.396-.903-10.468.701l1.636-5.123-5.291 5.609c.099-3.762 2.453-6.966 5.758-8.311.471.373 1.034.66 1.673.841.16.044.322.074.48.102a1.41 1.41 0 00.21 1.407l.075.09c-.172.45-.105.975.221 1.374l.475.582a1.39 1.39 0 001.079.513c.321 0 .635-.111.886-.314l.285-.232c.174.074.367.113.566.113a1.45 1.45 0 00.928-.326c.623-.51.72-1.435.209-2.06l-1.67-2.056c.145-.117.281-.244.408-.381.135.037.271.078.4.12.266.097.533.198.795.315a9.55 9.55 0 012.771 1.897c.029.03.059.055.085.083l.17.175a9.168 9.168 0 01.35.387l.126.15c.045.053.086.104.13.16l.114.15c.04.051.079.102.117.154.838 1.149.987 2.329.404 3.157v.005zM7.719 4.115l-.835-.051.053-.835.834.051-.052.835z"></path>
-                    </svg>
-                </a>
-            </p>
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+body{background:#264653}body #terminal{color:#2a9d8f}body #user{color:#e9c46a}body #dir{color:#f4a261}body .Typewriter__cursor{color:#e76f51}a{color:#e76f51}
+
+        
+.navFull {
+    background-color: #353535;
+    font-family: "Courier New";
+    font-size: 17px;
+    display: inline;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding-top: 5px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navCredits {
+    float: right;
+    padding-right: 18px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+#content::after {
+    content: "\a\a";
+    white-space: pre;
+}
+        
+        
+</style>
+
+
+
+</head><body><div id="content">
+    
+    
+
+    
+    
+
+    
+    
+        
+        
             
-        </div>
-    </div>
+            
+        
+    
+    
 
-    <script>
-        const canvas = document.querySelector("#bg-canvas");
-        const ctx = canvas.getContext("2d");
+    
+    
+    
+    
+    
+        
+            
+            
 
-        let debug = false;
-        let width = 0;
-        let height = 0;
-        updateCanvasSize(document.body.offsetWidth, document.body.offsetHeight);
-        let backgroundAngle = 360 - 40;
+            
+            
+            
+            
+            
+            
+            
+        
+            
+            
 
-        const POINT_COUNT = 10 + Math.floor(width * height * 0.00001);
-        const FILL_COLOR = "255, 255, 255";
-        const EDGE_OFFSET = 0;
-        const MAX_MOVE_SPEED = 2;
-        const MIN_MOVE_SPEED = 0.35;
-        const MAX_FADE_SPEED = 0.001;
-        const MIN_FADE_SPEED = 0.00001;
-        const MIN_ANGLE = degreesToRadians(270 - 135);
-        const MAX_ANGLE = degreesToRadians(270 + 135);
-        const MIN_RADIUS = 2;
-        const MAX_RADIUS = 7;
-        const MIN_ALPHA = 0.1;
-        const MAX_ALPHA = 0.4;
-        const BG_ROTATION_SPEED = 0.5;
+            
+            
+            
+            
+            
+            
+            
+        
+            
+            
 
-        class Point {
+            
+            
+          
+                
+            
+            
+            
+            
+            
+        
+    
 
-            constructor(id) {
-                this.id = id;
-                this.randomize();
+    
+
+    
+
+    
+    
+    
+
+    <span id="ps1_01"></span> <span id="cd"></span> <br>
+<span id="ps1_02"></span> <span id="cat"></span> <br>
+<span id="std_out_01"></span> <br>
+<span id="ps1_03"></span> <span id="tree"></span> <br>
+<span id="std_out_02"></span> <br>
+<span id="ps1_04"></span>
+
+<script type="text/javascript">
+    async function typewriter(text, elementId, waitAfter, collapse_after=true) {
+        var n = 0,
+            isTag = false
+        addText = "";
+        const el = document.getElementById(elementId);
+
+        const wait = () => new Promise(r => setTimeout(r, waitAfter));
+        const nowait = () => new Promise(r => r());
+
+        const render = () => el.innerHTML = (text.slice(0, n + 1) + addText);
+
+        const cursor = document.createElement('span');
+        cursor.id = "blink";
+
+        el.style.setProperty("margin-right", "-10px");
+        el.style.setProperty("--cursor-visibility", "visible");
+        while (n < text.length) {
+            if (text.charAt(n + 1) === "<") isTag = true;
+            if (text.charAt(n + 1) === ">") isTag = false;
+
+            if (isTag) {
+                n++;
+                continue;
             }
 
-            randomize() {
-                this.x = random(EDGE_OFFSET, width - EDGE_OFFSET);
-                this.y = random(EDGE_OFFSET, height - EDGE_OFFSET);
-                this.radius = random(MIN_RADIUS, MAX_RADIUS);
-                this.targetAlpha = random(MIN_ALPHA, MAX_ALPHA);
-                this.currentAlpha = 0;
-                this.fadeSpeed = random(MAX_FADE_SPEED, MIN_FADE_SPEED);
-                this.movementSpeed = random(MIN_MOVE_SPEED, MAX_MOVE_SPEED);
-                this.movementAngle = random(MIN_ANGLE, MAX_ANGLE);
+            requestAnimationFrame(render);
 
-                this.isFadingIn = true;
-                this.isDone = false;
-            }
-
-            update() {
-                if (this.isDone) {
-                    return;
-                }
-                if (this.isFadingIn) {
-                    this.currentAlpha = this.currentAlpha + this.fadeSpeed;
-                    if (this.currentAlpha >= this.targetAlpha) {
-                        this.currentAlpha = this.targetAlpha;
-                        this.isFadingIn = false;
-                    }
-                } else {
-                    this.currentAlpha = this.currentAlpha - this.fadeSpeed;
-                    if (this.currentAlpha <= 0) {
-                        this.currentAlpha = 0;
-                        this.isDone = true;
-                    }
-                }
-                this.x += this.movementSpeed * Math.cos(this.movementAngle);
-                this.y += this.movementSpeed * Math.sin(this.movementAngle);
-                if (this.x + this.radius < 0 ||
-                    this.x - this.radius > width ||
-                    this.y + this.radius < 0 ||
-                    this.y - this.radius > height) {
-                    this.isDone = true;
-                }
-                if (this.isDone) {
-                    this.randomize();
-                }
-            }
-
-        }
-
-        const points = [];
-        for (let i = 0; i < POINT_COUNT; i++) {
-            points.push(new Point(i + 1));
-        }
-
-        animate();
-        function animate() {
-            // don't fuck try to copy my code, (god for a reason) ctx.clearRect(0, 0, width, height);
-            //baba ayush
-            backgroundAngle += BG_ROTATION_SPEED;
-            if (backgroundAngle >= 360) {
-                backgroundAngle = 0;
-            }
-            const backgroundAngleRad = degreesToRadians(backgroundAngle);
-            const centerX = width / 2;
-            const centerY = height / 2;
-            const offsetX = centerX * Math.sin(backgroundAngleRad);
-            const offsetY = centerY * Math.cos(backgroundAngleRad);
-            const startX = centerX + offsetX;
-            const startY = centerY + offsetY;
-            const startXInv = centerX - offsetX;
-            const startYInv = centerY - offsetY;
-            const hypotenuse = Math.sqrt(Math.pow(centerX - startX, 2) + Math.pow(centerY, 2));
-
-            const gradient = ctx.createLinearGradient(startX, startY, startXInv, startYInv);
-            if (debug) {
-                gradient.addColorStop(0, "red");
-                gradient.addColorStop(1, "blue");
+            if (waitAfter === 0) {
+                await nowait();
             } else {
-                gradient.addColorStop(0, "#101126");
-                gradient.addColorStop(1, "#191a34");
-            }
-            ctx.fillStyle = gradient;
-            ctx.fillRect(0, 0, width, height);
-
-            if (debug) {
-                ctx.arc(startX, startY, 20, 0, 2 * Math.PI, false);
-                ctx.fillStyle = "green";
-                ctx.fill();
-                ctx.beginPath();
-                ctx.arc(startX, 0, 20, 0, 2 * Math.PI, false);
-                ctx.fillStyle = "green";
-                ctx.fill();
-                ctx.beginPath();
-                ctx.arc(0, startY, 20, 0, 2 * Math.PI, false);
-                ctx.fillStyle = "green";
-                ctx.fill();
-                ctx.beginPath();
-                ctx.arc(startXInv, startYInv, 20, 0, 2 * Math.PI, false);
-                ctx.fillStyle = "yellow";
-                ctx.fill();
-
-                ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
-                ctx.lineTo(startX, centerY);
-                ctx.lineTo(startX, startY);
-                ctx.lineTo(centerX, centerY);
-                ctx.strokeStyle = "green";
-                ctx.stroke();
-
-                ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
-                ctx.lineTo(startXInv, centerY);
-                ctx.lineTo(startXInv, startYInv);
-                ctx.lineTo(centerX, centerY);
-                ctx.strokeStyle = "yellow";
-                ctx.stroke();
+                await wait();
             }
 
-            for (const p of points) {
-                p.update();
-                ctx.beginPath();
-                ctx.fillStyle = `rgba(${FILL_COLOR}, ${p.currentAlpha})`;
-                ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, false);
-                ctx.fill();
-                if (debug) {
-                    ctx.font = "48px sans-serif";
-                    ctx.fillStyle = "red";
-                    ctx.fillText(`${p.id}`, p.x, p.y);
-                }
-            }
-
-            requestAnimationFrame(animate);
+            n++;
         }
-
-        function updateCanvasSize(w, h) {
-            canvas.width = width = w;
-            canvas.height = height = h;
+        if (collapse_after) {
+            el.style.setProperty("--cursor-visibility", "collapse");
         }
+    }
 
-        function random(min, max) {
-            return Math.random() * (max - min) + min;
-        }
+    function parseDelay(d) {
+        const parsed = parseInt(d, 10);
+        if (isNaN(parsed)) return 0;
+        return parsed;
+    }
 
-        function degreesToRadians(deg) {
-            return deg * (Math.PI / 180);
-        }
+    const ps1Delay = parseDelay("15"),
+        stdoutDelay = parseDelay("15"),
+        commandDelay = parseDelay("15");
+    const typeeffetct = async () => {
+        await typewriter("\u003cstrong\u003e\u003cspan id=\u0027user\u0027\u003eAyush\u003c\/span\u003e\u003cspan id=\u0027terminal\u0027\u003e:\u003c\/span\u003e\u003cspan id=\u0027dir\u0027\u003e~\/\u003c\/span\u003e\u003c\/strong\u003e\u003cspan id=\u0027terminal\u0027\u003e$\u003c\/span\u003e", "ps1_01", ps1Delay); 
+        await typewriter("\u003cspan id=\u0027terminal\u0027\u003ecd coffee\u003c\/span\u003e", "cd", commandDelay);
+        await typewriter("\u003cstrong\u003e\u003cspan id=\u0027user\u0027\u003eayush@edith\u003c\/span\u003e\u003cspan id=\u0027terminal\u0027\u003e:\u003c\/span\u003e\u003cspan id=\u0027dir\u0027\u003e~\/coffee\u003c\/span\u003e\u003c\/strong\u003e\u003cspan id=\u0027terminal\u0027\u003e$\u003c\/span\u003e", "ps1_02", ps1Delay); 
+        await typewriter("\u003cspan id=terminal\u003ecat about.txt\u003c\/span\u003e", "cat", commandDelay);
+        await typewriter("\u003cspan id=\u0027terminal\u0027\u003e\u003cbr\u003e\n      heya, i\u0026rsquo;m ayush!\u003cbr\u003e\n          👻\u003cbr\u003e\n\u003cbr\u003e\n  i like to breathe and program \u003cdel\u003esometimes\u003c\/del\u003e ‹𝟹\u003c\/p\u003e\n\u003c\/span\u003e", "std_out_01", stdoutDelay);
+        await typewriter("\u003cstrong\u003e\u003cspan id=\u0027user\u0027\u003eayush@edith\u003c\/span\u003e\u003cspan id=\u0027terminal\u0027\u003e:\u003c\/span\u003e\u003cspan id=\u0027dir\u0027\u003e~\/coffee\u003c\/span\u003e\u003c\/strong\u003e\u003cspan id=\u0027terminal\u0027\u003e$\u003c\/span\u003e", "ps1_03", ps1Delay); 
+        await typewriter("\u003cspan id=\u0027terminal\u0027\u003etree .\/ingredients\/\u003c\/span\u003e", "tree", commandDelay);
+        await typewriter("\u003cspan id=\u0027terminal\u0027\u003e\u003cspan id=\u0027terminal\u0027\u003e\u003cspan id=\u0027terminal\u0027\u003e\u003cstrong\u003e\u003cspan id=\u0027dir\u0027\u003e.\/ingredients\/\u003c\/span\u003e\u003c\/strong\u003e\u003cbr\u003e├── \u003ca href=\u0027https:\/\/github.com\/ayushedith\u0027\u003eGitHub\u003c\/a\u003e\u003c\/span\u003e\u003cbr\u003e├── \u003ca href=\u0027https:\/\/discord.com\/users/581525444424368131\u0027\u003eDiscord\u003c\/a\u003e\u003c\/span\u003e\u003cbr\u003e└── \u003ca href=\u0027http:\/\/twitter.com\/ayushedith\/\u0027\u003eX\u003c\/a\u003e\u003c\/span\u003e", "std_out_02", stdoutDelay);                                                                                                           //madeBy Ayush aka ayushedith
+        await typewriter("\u003cstrong\u003e\u003cspan id=\u0027user\u0027\u003eayush@edith\u003c\/span\u003e\u003cspan id=\u0027terminal\u0027\u003e:\u003c\/span\u003e\u003cspan id=\u0027dir\u0027\u003e~\/coffee\u003c\/span\u003e\u003c\/strong\u003e\u003cspan id=\u0027terminal\u0027\u003e$\u003c\/span\u003e ", "ps1_04", ps1Delay, false);
+        return;
+    }
 
-        new ResizeObserver(entries => {
-            updateCanvasSize(document.body.offsetWidth, document.body.offsetHeight);
-        }).observe(document.body);
-    </script>
+    typeeffetct()
+</script>
 
 
-
-
-</body></html>
+        </div>
+        
+        
+        
+         
+    </body>
+</html>
